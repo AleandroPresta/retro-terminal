@@ -1,0 +1,26 @@
+.loading-header {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+
+.loading-heading {
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.loading-bar-container {
+	height: 20px;
+	background-color: #333;
+	border: 1px solid #00ff00;
+}
+
+.loading-bar {
+	height: 100%;
+	width: 0;
+	transition: width 0.5s;
+}
+
+.loading-footer {
+	margin-top: 20px;
+	font-size: 1.5rem;
+}
