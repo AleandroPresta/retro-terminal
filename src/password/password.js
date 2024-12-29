@@ -83,6 +83,7 @@ class PasswordKeypad {
         }
     }
 
+    // Resets the display that shows the password written
     async updateDisplay(newDigit = null) {
         const digits = document.querySelectorAll('.digit');
 
@@ -109,9 +110,9 @@ class PasswordKeypad {
         if (this.password === this.correctPassword) {
             this.successSound.currentTime = 0;  // Reset audio to start
             this.successSound.play().catch(e => console.error("Error playing success sound:", e));
-            // Hide the terminal and resolve the promise
-            document.getElementById('terminal').style.display = 'none';
-            document.getElementById('app').style.display = 'block';  // Show the app div
+            console.log('Correct password entered');
+            // Go back to the menu
+
             if (this.resolve) this.resolve();
         } else {
             this.errorSound.currentTime = 0;  // Reset audio to start

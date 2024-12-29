@@ -1,9 +1,3 @@
-.terminal-content {
-	font-size: 24px;
-	line-height: 1.5;
-	text-shadow: 0 0 5px #00ff00;
-}
-
 .terminal::before {
 	content: "";
 	position: absolute;
@@ -14,10 +8,6 @@
 	background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.25) 50%);
 	background-size: 100% 4px;
 	pointer-events: none;
-}
-
-.prompt {
-	margin-bottom: 20px;
 }
 
 .option {

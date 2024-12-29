@@ -49,3 +49,13 @@
 .gap-10-px {
 	gap: 10px;
 }
+
+.terminal-content {
+	font-size: 24px;
+	line-height: 1.5;
+	text-shadow: 0 0 5px #00ff00;
+}
+
+.prompt {
+	margin-bottom: 20px;
+}
