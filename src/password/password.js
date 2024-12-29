@@ -1,7 +1,7 @@
 class PasswordKeypad {
     constructor(container) {
         this.container = container;
-        this.passwordUrl = '/src/password/password.html';
+        this.passwordUrl = 'src/password/password.html';
     }
 
     async initialize() {
