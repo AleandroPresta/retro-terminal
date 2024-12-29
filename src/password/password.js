@@ -1,13 +1,14 @@
 class PasswordKeypad {
     constructor(container) {
         this.container = container;
+        this.passwordUrl = '/src/password/password.html';
     }
 
     async initialize() {
         try {
-            const response = await fetch('/src/password/password.html');
+            const response = await fetch(this.passwordUrl);
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`Error fetching at ${this.passwordUrl}`);
             }
             const html = await response.text();
             this.container.innerHTML = html;
