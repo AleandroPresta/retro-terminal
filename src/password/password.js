@@ -15,7 +15,6 @@ class PasswordKeypad {
             console.error('Failed to fetch password.html:', error);
             this.container.innerHTML = '<p>Error loading keypad. Please try again later.</p>';
         }
-        this.container.innerHTML = html;
 
         this.currentRow = 0;
         this.currentCol = 0;
