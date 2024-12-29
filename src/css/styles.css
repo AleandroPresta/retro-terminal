@@ -45,3 +45,7 @@
 .cursor-default {
 	cursor: default;
 }
+
+.gap-10-px {
+	gap: 10px;
+}

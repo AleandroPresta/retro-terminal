@@ -36,14 +36,6 @@ class PasswordKeypad {
             });
         });
     }
-    /*
-        
-    }
-
-    async initialize() {
-        this.updateSelection();
-        document.addEventListener('keydown', (e) => this.handleKeyPress(e));
-    }
 
     updateSelection() {
         this.keys.forEach(key => key.classList.remove('selected'));
@@ -133,7 +125,7 @@ class PasswordKeypad {
         return new Promise((resolve) => {
             this.resolve = resolve;
         });
-    } */
+    }
 }
 
 export default PasswordKeypad;
