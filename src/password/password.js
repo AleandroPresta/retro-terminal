@@ -1,5 +1,13 @@
 class PasswordKeypad {
-    constructor() {
+    constructor(container) {
+        this.container = container;
+    }
+
+    async initialize() {
+        const response = await fetch('/src/password/password.html');
+        const html = await response.text();
+        this.container.innerHTML = html;
+
         this.currentRow = 0;
         this.currentCol = 0;
         this.password = '';
@@ -8,7 +16,8 @@ class PasswordKeypad {
         this.correctPassword = '1996';
         this.successSound = document.getElementById('success-sound');
         this.errorSound = document.getElementById('error-sound');
-        this.init();
+        this.updateSelection();
+        document.addEventListener('keydown', (e) => this.handleKeyPress(e));
         // Add click event listeners to all keys
         this.keys.forEach(key => {
             key.addEventListener('click', () => {
@@ -27,8 +36,11 @@ class PasswordKeypad {
             });
         });
     }
+    /*
+        
+    }
 
-    init() {
+    async initialize() {
         this.updateSelection();
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
     }
@@ -121,8 +133,7 @@ class PasswordKeypad {
         return new Promise((resolve) => {
             this.resolve = resolve;
         });
-    }
+    } */
 }
 
-const keypad = new PasswordKeypad();
-export default keypad;
+export default PasswordKeypad;
