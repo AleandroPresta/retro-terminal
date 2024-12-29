@@ -14,7 +14,6 @@ class PasswordKeypad {
         this.keys = document.querySelectorAll('.key');
         this.digits = document.querySelectorAll('.digit');
         this.correctPassword = '1996';
-        this.successSound = document.getElementById('success-sound');
         this.errorSound = document.getElementById('error-sound');
         this.updateSelection();
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
@@ -108,10 +107,10 @@ class PasswordKeypad {
 
     submitPassword() {
         if (this.password === this.correctPassword) {
-            this.successSound.currentTime = 0;  // Reset audio to start
-            this.successSound.play().catch(e => console.error("Error playing success sound:", e));
             console.log('Correct password entered');
-            // Go back to the menu
+            // Dispatch custom event to notify that the correct password was entered
+            const event = new CustomEvent('passwordCorrect');
+            document.dispatchEvent(event);
 
             if (this.resolve) this.resolve();
         } else {
