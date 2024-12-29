@@ -29,3 +29,11 @@
 .align-items-center {
 	align-items: center;
 }
+
+.w-80 {
+	width: 80%;
+}
+
+.w-70 {
+	width: 70%;
+}
