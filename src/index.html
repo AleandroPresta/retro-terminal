@@ -5,10 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Retro Terminal</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/password/password.css">
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app"></div>
+    <div id="terminal" class="terminal">
+        <div class="terminal-content">
+            <div class="prompt">ENTER ACCESS CODE:</div>
+            <div class="password-display">
+                <span class="digit">_</span>
+                <span class="digit">_</span>
+                <span class="digit">_</span>
+                <span class="digit">_</span>
+            </div>
+            <div class="keypad">
+                <div class="keypad-row">
+                    <div class="key" data-value="1">1</div>
+                    <div class="key" data-value="2">2</div>
+                    <div class="key" data-value="3">3</div>
+                </div>
+                <div class="keypad-row">
+                    <div class="key" data-value="4">4</div>
+                    <div class="key" data-value="5">5</div>
+                    <div class="key" data-value="6">6</div>
+                </div>
+                <div class="keypad-row">
+                    <div class="key" data-value="7">7</div>
+                    <div class="key" data-value="8">8</div>
+                    <div class="key" data-value="9">9</div>
+                </div>
+                <div class="keypad-row">
+                    <div class="key" data-value="clear">CLR</div>
+                    <div class="key" data-value="0">0</div>
+                    <div class="key" data-value="enter">ENT</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app" style="display: none;"></div>
+    <audio id="success-sound" src="../assets/sound/success_bell-6776.mp3" preload="auto"></audio>
+    <audio id="error-sound" src="../assets/sound/error-sound-39539.mp3" preload="auto"></audio>
+    <script type="module" src="../js/password/password.js"></script>
     <script type="module" src="../js/main.js"></script>
 </body>
 </html>

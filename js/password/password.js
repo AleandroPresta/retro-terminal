@@ -36,7 +36,9 @@ class PasswordKeypad {
     updateSelection() {
         this.keys.forEach(key => key.classList.remove('selected'));
         const index = this.currentRow * 3 + this.currentCol;
-        this.keys[index].classList.add('selected');
+        if (index >= 0 && index < this.keys.length) {
+            this.keys[index].classList.add('selected');
+        }
     }
 
     handleKeyPress(e) {
@@ -103,7 +105,10 @@ class PasswordKeypad {
         if (this.password === this.correctPassword) {
             this.successSound.currentTime = 0;  // Reset audio to start
             this.successSound.play().catch(e => console.error("Error playing success sound:", e));
-            // Add any additional success handling here
+            // Hide the terminal and resolve the promise
+            document.getElementById('terminal').style.display = 'none';
+            document.getElementById('app').style.display = 'block';  // Show the app div
+            if (this.resolve) this.resolve();
         } else {
             this.errorSound.currentTime = 0;  // Reset audio to start
             this.errorSound.play().catch(e => console.error("Error playing error sound:", e));
@@ -111,6 +116,13 @@ class PasswordKeypad {
             this.updateDisplay();
         }
     }
+
+    waitForCorrectPassword() {
+        return new Promise((resolve) => {
+            this.resolve = resolve;
+        });
+    }
 }
 
-new PasswordKeypad();
+const keypad = new PasswordKeypad();
+export default keypad;
