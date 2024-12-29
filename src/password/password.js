@@ -25,7 +25,8 @@ class PasswordKeypad {
         this.correctPassword = '1996';
         this.errorSound = document.getElementById('error-sound');
         this.updateSelection();
-        document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+        this.handleKeyPressBound = this.handleKeyPress.bind(this);
+        document.addEventListener('keydown', this.handleKeyPressBound);
         // Add click event listeners to all keys
         this.keys.forEach(key => {
             key.addEventListener('click', () => {
@@ -117,6 +118,7 @@ class PasswordKeypad {
     submitPassword() {
         if (this.password === this.correctPassword) {
             console.log('Correct password entered');
+            this.removeEventListeners(); // Remove event listeners
             // Dispatch custom event to notify that the correct password was entered
             const event = new CustomEvent('passwordCorrect');
             document.dispatchEvent(event);
@@ -128,6 +130,13 @@ class PasswordKeypad {
             this.password = '';
             this.updateDisplay();
         }
+    }
+
+    removeEventListeners() {
+        document.removeEventListener('keydown', this.handleKeyPressBound);
+        this.keys.forEach(key => {
+            key.replaceWith(key.cloneNode(true)); // Remove all event listeners from keys
+        });
     }
 
     waitForCorrectPassword() {
