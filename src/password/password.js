@@ -1,12 +1,21 @@
 class PasswordKeypad {
     constructor(container) {
         this.container = container;
+        this.passwordUrl = 'src/password/password.html';
     }
 
     async initialize() {
-        const response = await fetch('/src/password/password.html');
-        const html = await response.text();
-        this.container.innerHTML = html;
+        try {
+            const response = await fetch(this.passwordUrl);
+            if (!response.ok) {
+                throw new Error(`Error fetching at ${this.passwordUrl}`);
+            }
+            const html = await response.text();
+            this.container.innerHTML = html;
+        } catch (error) {
+            console.error('Failed to fetch password.html:', error);
+            this.container.innerHTML = '<p>Error loading keypad. Please try again later.</p>';
+        }
 
         this.currentRow = 0;
         this.currentCol = 0;

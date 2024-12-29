@@ -6,7 +6,7 @@ class Menu {
     }
 
     async initialize() {
-        const response = await fetch('/src/menu/menu.html');
+        const response = await fetch('src/menu/menu.html');
         const html = await response.text();
         this.container.innerHTML = html;
 
