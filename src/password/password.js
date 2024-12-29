@@ -4,8 +4,17 @@ class PasswordKeypad {
     }
 
     async initialize() {
-        const response = await fetch('/src/password/password.html');
-        const html = await response.text();
+        try {
+            const response = await fetch('/src/password/password.html');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const html = await response.text();
+            this.container.innerHTML = html;
+        } catch (error) {
+            console.error('Failed to fetch password.html:', error);
+            this.container.innerHTML = '<p>Error loading keypad. Please try again later.</p>';
+        }
         this.container.innerHTML = html;
 
         this.currentRow = 0;
