@@ -7,11 +7,6 @@ let successSound = document.getElementById('success-sound');
 document.addEventListener('DOMContentLoaded', async () => {
     const appContainer = document.getElementById('app');
 
-    if (componentToShow === 'menu') {
-        const menu = new Menu(appContainer);
-        await menu.initialize();
-    }
-
     if (componentToShow === 'password') {
         const keypad = new PasswordKeypad(appContainer);
         await keypad.initialize();
