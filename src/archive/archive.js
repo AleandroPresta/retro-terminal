@@ -32,3 +32,14 @@ function showMessage(index) {
         option.classList.toggle('selected', i === index);
     });
 }
+
+// Add clock functionality
+function updateClock() {
+    const now = new Date();
+    const time = now.toTimeString().split(' ')[0];
+    document.querySelector('.clock').textContent = time;
+}
+
+// Update clock every second
+setInterval(updateClock, 1000);
+updateClock(); // Initial call

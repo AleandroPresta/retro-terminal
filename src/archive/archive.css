@@ -1,11 +1,16 @@
+body {
+	overflow-y: hidden;
+}
+
 .option {
 	color: #0f0;
-	cursor: pointer;
+	cursor: default;
 	padding: 24px 32px; /* Increased padding */
 	margin: 8px 0; /* Added vertical margin between items */
 	border-bottom: 1px solid #0f0;
 	font-size: 1.2rem;
 	background-color: #1a1a1a; /* Dark background for the sidebar options */
+	pointer-events: none;
 }
 
 .option.selected {
@@ -77,4 +82,28 @@
 /* Remove list bullets */
 ul {
 	list-style: none;
+}
+
+.terminal-footer {
+	border-top: 2px solid #0f0;
+	padding: 10px 20px;
+	background-color: #1a1a1a;
+	font-family: monospace;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.9rem;
+	color: #0f0;
+}
+
+.footer-item {
+	padding: 0 15px;
+	text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
 }
