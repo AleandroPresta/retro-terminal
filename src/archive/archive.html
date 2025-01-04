@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archive</title>
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/typography.css">
+	<link rel="stylesheet" href="../css/colors.css">
+	<link rel="stylesheet" href="../menu/menu.css">
+	<link rel="stylesheet" href="archive.css">
+</head>
+<body class="bg-dark text-primary">
+	<div class="d-flex vh-100">
+		<div class="w-30 bg-dark p-0 m-0 position-relative">
+			<ul class="d-flex flex-column p-0 m-0">
+				<li class="option selected" onclick="showMessage(0)">Accident Report</li>
+				<li class="option" onclick="showMessage(1)">Incident Follow-Up</li>
+				<li class="option" onclick="showMessage(2)">Final Report</li>
+			</ul>
+		</div>
+		<div class="w-70 p-0 m-0 terminal-content">
+			<div class="message" id="message-0">
+				<h2 class="text-align-center">Accident Report</h2>
+				<p><strong>From:</strong> John Doe</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+			</div>
+			<div class="message" id="message-1" style="display: none;">
+				<h2 class="text-align-center">Incident Follow-Up</h2>
+				<p><strong>From:</strong> Jane Smith</p>
+				<p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+			</div>
+			<div class="message" id="message-2" style="display: none;">
+				<h2 class="text-align-center">Final Report</h2>
+				<p><strong>From:</strong> Alice Johnson</p>
+				<p>Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum.</p>
+			</div>
+		</div>
+	</div>
+	<script src="archive.js"></script>
+</body>
+</html>
