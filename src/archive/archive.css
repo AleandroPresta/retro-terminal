@@ -1,0 +1,109 @@
+body {
+	overflow-y: hidden;
+}
+
+.archive-option {
+	color: #0f0;
+	cursor: default;
+	padding: 24px 32px; /* Increased padding */
+	margin: 8px 0; /* Added vertical margin between items */
+	border-bottom: 1px solid #0f0;
+	font-size: 1.2rem;
+	background-color: #1a1a1a; /* Dark background for the sidebar options */
+	pointer-events: none;
+}
+
+.archive-option.selected {
+	background-color: #0f0;
+	color: #000;
+}
+
+.archive-content {
+	padding: 20px;
+	font-size: 1.2rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.archive-content::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(
+			rgba(18, 16, 16, 0) 50%,
+			rgba(0, 50, 0, 0.25) 50%
+		),
+		linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 0.06),
+			rgba(0, 255, 0, 0.02),
+			rgba(0, 0, 255, 0.06)
+		);
+	background-size: 100% 2px, 3px 100%;
+	pointer-events: none;
+	animation: scan 0.5s linear infinite;
+}
+
+@keyframes scan {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 0 2px;
+	}
+}
+
+.message {
+	max-width: 800px;
+	margin: 0 auto;
+	text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.message h2 {
+	font-size: 1.8rem;
+	margin-bottom: 2rem;
+	text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+.message p {
+	margin-bottom: 1.5rem;
+	line-height: 1.6;
+}
+
+/* Add spacing to the sidebar list */
+.d-flex.flex-column {
+	padding: 20px !important;
+	margin: 0;
+}
+
+/* Remove list bullets */
+ul {
+	list-style: none;
+}
+
+.archive-footer {
+	border-top: 2px solid #0f0;
+	padding: 10px 20px;
+	background-color: #1a1a1a;
+	font-family: monospace;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.9rem;
+	color: #0f0;
+}
+
+.footer-item {
+	padding: 0 15px;
+	text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.flex-grow-1 {
+	flex-grow: 1;
+}

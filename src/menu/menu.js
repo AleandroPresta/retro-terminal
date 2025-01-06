@@ -1,3 +1,5 @@
+import Archive from '../archive/archive.js';
+
 class Menu {
     constructor(container) {
         this.container = container;
@@ -31,12 +33,29 @@ class Menu {
                 this.selectedIndex = (this.selectedIndex + 1) % this.options.length;
                 this.updateSelection();
                 break;
+            case 'Enter':
+                if (this.selectedIndex === 0) {
+                    this.goToArchive();
+                }
+                break;
         }
     }
 
     updateSelection() {
         this.options.forEach(option => option.classList.remove('selected'));
         this.options[this.selectedIndex].classList.add('selected');
+    }
+
+    goToArchive() {
+        console.log('Go to archive');
+
+        const appContainer = document.querySelector('.app');
+        console.log(appContainer);
+
+        const archive = new Archive(appContainer);
+        console.log(archive);
+
+        archive.initialize();
     }
 }
 
