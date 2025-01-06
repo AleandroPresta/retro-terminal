@@ -1,3 +1,5 @@
+import Archive from '../archive/archive.js';
+
 class Menu {
     constructor(container) {
         this.container = container;
@@ -49,6 +51,11 @@ class Menu {
 
         const appContainer = document.querySelector('.app');
         console.log(appContainer);
+
+        const archive = new Archive(appContainer);
+        console.log(archive);
+
+        archive.initialize();
     }
 }
 
