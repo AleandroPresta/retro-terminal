@@ -2,7 +2,7 @@ body {
 	overflow-y: hidden;
 }
 
-.option {
+.archive-option {
 	color: #0f0;
 	cursor: default;
 	padding: 24px 32px; /* Increased padding */
@@ -13,19 +13,19 @@ body {
 	pointer-events: none;
 }
 
-.option.selected {
+.archive-option.selected {
 	background-color: #0f0;
 	color: #000;
 }
 
-.terminal-content {
+.archive-content {
 	padding: 20px;
 	font-size: 1.2rem;
 	position: relative;
 	overflow: hidden;
 }
 
-.terminal-content::before {
+.archive-content::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -84,7 +84,7 @@ ul {
 	list-style: none;
 }
 
-.terminal-footer {
+.archive-footer {
 	border-top: 2px solid #0f0;
 	padding: 10px 20px;
 	background-color: #1a1a1a;

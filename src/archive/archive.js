@@ -29,7 +29,7 @@ class Archive {
     handleKeyPress(event) {
         if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
             event.preventDefault(); // Prevent default scrolling behavior
-            const selected = document.querySelector('.option.selected');
+            const selected = document.querySelector('.archive-option.selected');
             let newSelected;
             if (event.key === 'ArrowUp') {
                 newSelected = selected.previousElementSibling;
@@ -50,7 +50,7 @@ class Archive {
         messages.forEach((message, i) => {
             message.style.display = i === index ? 'block' : 'none';
         });
-        const options = document.querySelectorAll('.option');
+        const options = document.querySelectorAll('.archive-option');
         options.forEach((option, i) => {
             option.classList.toggle('selected', i === index);
         });
