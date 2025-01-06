@@ -32,8 +32,6 @@ class Menu {
                 this.updateSelection();
                 break;
             case 'Enter':
-                e.preventDefault();
-                // If the first option is selected, go to the archive page
                 if (this.selectedIndex === 0) {
                     this.goToArchive();
                 }
@@ -47,7 +45,7 @@ class Menu {
     }
 
     goToArchive() {
-        window.location.href = '/archive'; // TODO Update this to actual archive route
+        console.log('Go to archive');
     }
 }
 

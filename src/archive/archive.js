@@ -43,3 +43,17 @@ function updateClock() {
 // Update clock every second
 setInterval(updateClock, 1000);
 updateClock(); // Initial call
+
+// Add archive functionality
+export class Archive {
+
+    constructor(container) {
+        this.container = container;
+    }
+
+    async initialize() {
+        const response = await fetch('src/archive/archive.html');
+        const html = await response.text();
+        this.container.innerHTML = html;
+    }
+}
