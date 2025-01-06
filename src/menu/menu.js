@@ -31,12 +31,23 @@ class Menu {
                 this.selectedIndex = (this.selectedIndex + 1) % this.options.length;
                 this.updateSelection();
                 break;
+            case 'Enter':
+                e.preventDefault();
+                // If the first option is selected, go to the archive page
+                if (this.selectedIndex === 0) {
+                    this.goToArchive();
+                }
+                break;
         }
     }
 
     updateSelection() {
         this.options.forEach(option => option.classList.remove('selected'));
         this.options[this.selectedIndex].classList.add('selected');
+    }
+
+    goToArchive() {
+        window.location.href = '/archive'; // TODO Update this to actual archive route
     }
 }
 
