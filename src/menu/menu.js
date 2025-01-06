@@ -46,6 +46,9 @@ class Menu {
 
     goToArchive() {
         console.log('Go to archive');
+
+        const appContainer = document.querySelector('.app');
+        console.log(appContainer);
     }
 }
 
